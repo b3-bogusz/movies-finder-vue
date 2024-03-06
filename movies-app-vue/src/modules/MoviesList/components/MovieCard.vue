@@ -1,17 +1,21 @@
 <script setup lang="ts">
-const props = defineProps({
-  id: String,
-  title: String,
-  year: String,
-  posterUrl: String
+import type { Movie } from '@/types'
+import type { Nullable } from '@/types'
+
+interface IProps {
+  movie: Nullable<Movie>
+}
+
+const props = withDefaults(defineProps<IProps>(), {
+  movie: null
 })
 </script>
 
 <template>
   <div class="container">
-    <img :src="posterUrl" :alt="title" class="poster" />
-    <div class="year">{{ year }}</div>
-    <div class="title">{{ title }}</div>
+    <img :src="props.movie?.Poster" :alt="props.movie?.Title" class="poster" />
+    <div class="year">{{ props.movie?.Year }}</div>
+    <div class="title">{{ props.movie?.Title }}</div>
   </div>
 </template>
 
