@@ -1,23 +1,21 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import MovieCard from './components/MovieCard.vue'
-import type { Movie } from '@/types'
-import type { Nullable } from '@/types'
+import useMoviesWithQueryAndPage from '@/composables/useMoviesWithQueryAndPage.ts'
 
-interface IProps {
-  movies: Nullable<Movie[]>
-  getFunction?: () => Movie[]
-}
+const moviesArray = ref([])
 
-const props = withDefaults(defineProps<IProps>(), {
-  movies: null,
-  // movies: () => ({}),
-  getFunction: () => []
+const { getMoviesArray } = useMoviesWithQueryAndPage()
+
+onMounted(async () => {
+  const { data } = await getMoviesArray('batman', 1)
+  moviesArray.value = data.Search
 })
 </script>
 
 <template>
   <div class="wrapper">
-    <MovieCard v-for="movie in props.movies" :key="movie.imdbID" :movie="movie" />
+    <MovieCard v-for="movie in moviesArray" :key="movie.imdbID" :movie="movie" />
   </div>
 </template>
 
