@@ -23,7 +23,6 @@ const props = withDefaults(defineProps<IProps>(), {
 .container {
   width: 13rem;
   align-items: left;
-  margin: 2rem 1rem;
 }
 .poster {
   width: 13rem;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import MovieCard from './components/MovieCard.vue'
-import useMoviesWithQueryAndPage from '@/composables/useMoviesWithQueryAndPage.ts'
+import { useMoviesWithQueryAndPage } from '@/composables/useMoviesWithQueryAndPage'
 
 const moviesArray = ref([])
 
@@ -24,6 +24,10 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
 }
 </style>
