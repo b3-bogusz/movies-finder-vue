@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="logo">
-    <img src="@/assets/img/main_logo.png" alt="App logo" class="logo__img" />
+  <div>
+    <img src="@/assets/img/main_logo.png" alt="App logo" class="img" />
   </div>
 </template>
 
