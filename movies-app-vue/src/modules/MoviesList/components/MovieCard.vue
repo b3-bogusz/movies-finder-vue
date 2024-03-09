@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Movie } from '@/types'
 import type { Nullable } from '@/types'
+import { withDefaults, defineProps } from 'vue'
 
 interface IProps {
   movie: Nullable<Movie>
