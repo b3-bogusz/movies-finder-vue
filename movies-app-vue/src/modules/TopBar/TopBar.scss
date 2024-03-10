@@ -1,4 +1,5 @@
 .top-bar {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,5 +38,15 @@
     @media (min-width: $tablet-1024) {
       flex: 2;
     }
+  }
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $accent-color;
   }
 }

@@ -1,0 +1,42 @@
+.movie-card {
+  width: 13rem;
+  align-items: left;
+
+  &__poster {
+    width: 13rem;
+    height: 22rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  &__year {
+    font-size: 1.4rem;
+    color: #666;
+  }
+
+  &__rating {
+    fill: $accent-color;
+  }
+
+  &__svg {
+    margin: 0 0.1rem;
+
+    &:first-of-type,
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    word-wrap: break-word;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

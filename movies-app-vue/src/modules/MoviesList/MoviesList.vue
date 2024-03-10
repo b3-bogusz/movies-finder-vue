@@ -10,6 +10,7 @@ const { getMoviesArray } = useMoviesWithQueryAndPage()
 onMounted(async () => {
   const { data } = await getMoviesArray('batman', 1)
   moviesArray.value = data.Search
+  console.log(data.Search)
 })
 </script>
 
