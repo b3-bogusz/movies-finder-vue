@@ -5,7 +5,7 @@ import TopBar from '@/modules/TopBar/TopBar.vue'
 </script>
 
 <template>
-  <main>
+  <main class="home-container">
     <TopBar />
     <TypeHeader
       title="Your Movies"
@@ -14,3 +14,5 @@ import TopBar from '@/modules/TopBar/TopBar.vue'
     <MoviesList />
   </main>
 </template>
+
+<style scoped lang="scss" src="./HomeView.scss"></style>
