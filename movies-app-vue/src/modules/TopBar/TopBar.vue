@@ -4,6 +4,7 @@ import SearchInput from '@/modules/SearchInput/SearchInput.vue'
 import Logo from '@/components/Logo/Logo.vue'
 import { iconChevron } from '@/assets/svg/Svg'
 import Svg from '@/components/Svg/Svg.vue'
+
 const searchMovieInput = ref<string>('')
 </script>
 

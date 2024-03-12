@@ -2,11 +2,13 @@
 import { onMounted, ref } from 'vue'
 import MovieCard from './components/MovieCard.vue'
 import { useMoviesWithQueryAndPage } from '@/composables/useMoviesWithQueryAndPage'
+import type { Movie } from '@/types'
 
-const moviesArray = ref([])
+const moviesArray = ref<Movie[]>([])
 
 const { getMoviesArray } = useMoviesWithQueryAndPage()
 
+//@ts-ignore
 onMounted(async () => {
   const { data } = await getMoviesArray('batman', 1)
   moviesArray.value = data.Search
@@ -15,7 +17,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="wrapper">
+  <div v-if="moviesArray" class="wrapper">
     <MovieCard v-for="movie in moviesArray" :key="movie.imdbID" :movie="movie" />
   </div>
 </template>
