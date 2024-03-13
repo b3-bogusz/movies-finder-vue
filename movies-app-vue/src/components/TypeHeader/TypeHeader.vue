@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface IProps {
   title: string
-  subtitle: string
+  subtitle?: string
 }
 
 const props = withDefaults(defineProps<IProps>(), {

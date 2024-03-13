@@ -2,18 +2,25 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  height: 100%;
+  background: var(--color-background);
+  overflow-x: hidden;
 }
 
 body {
-  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   color: var(--color-text);
-  background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
-  line-height: 1.6;
+  line-height: 1.4;
   font-family:
     Inter,
     -apple-system,
@@ -33,26 +40,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  font-size: 62.5%;
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-}
+a {
+  text-decoration: none;
+  color: currentColor;
 
-#app {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-
-  @media (min-width: 1024px) {
-    #app {
-      padding: 2rem;
-    }
+  &:hover {
+    text-decoration: none;
+    color: var(--color-text);
+    cursor: pointer;
   }
 }

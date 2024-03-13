@@ -1,14 +1,12 @@
 import { onMounted, ref } from 'vue'
 import apiClient from '@/services/api'
 import { useRoute } from 'vue-router'
-import type { MovieDetails } from '@/types/MovieDetails'
-import type { Nullable } from '@/types/Nullable'
+import type { MovieDetails, Nullable } from '@/types'
 
 export const useMovieDetailsWithId = () => {
   const movie = ref<Nullable<MovieDetails>>(null)
 
   const route = useRoute()
-  console.log(route.params.id)
 
   const getMovieDetails = async (id: string): Promise<void> => {
     const response = await apiClient.get('', {
@@ -17,6 +15,7 @@ export const useMovieDetailsWithId = () => {
         type: 'movie'
       }
     })
+    console.log(response.data)
     return (movie.value = response.data)
   }
 

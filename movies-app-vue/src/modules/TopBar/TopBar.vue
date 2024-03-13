@@ -14,10 +14,9 @@ const searchMovieInput = ref<string>('')
       <Logo />
     </div>
     <div class="top-bar__search">
-      <Svg :svgClassName="'top-bar__svg'" :icon="iconChevron" :size="1.1" /><span
-        class="top-bar__go-back"
-        >Go Back</span
-      >
+      <Svg :svgClassName="'top-bar__svg'" :icon="iconChevron" :size="1.1" />
+      <span class="top-bar__go-back">Go Back</span>
+
       <SearchInput type="text" v-model="searchMovieInput" />
       <p>{{ searchMovieInput }}</p>
     </div>
