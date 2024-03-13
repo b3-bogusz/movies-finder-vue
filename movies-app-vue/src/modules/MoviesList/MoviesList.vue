@@ -10,7 +10,7 @@ const { getMoviesArray } = useMoviesWithQueryAndPage()
 
 //@ts-ignore
 onMounted(async () => {
-  const { data } = await getMoviesArray('batman', 1)
+  const { data } = await getMoviesArray('Toy', 1)
   moviesArray.value = data.Search
   console.log(data.Search)
 })
@@ -28,9 +28,9 @@ onMounted(async () => {
   justify-content: center;
   flex-wrap: wrap;
 }
-@media (max-width: 768px) {
+@media (min-width: $tablet-768) {
   .wrapper {
-    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 </style>

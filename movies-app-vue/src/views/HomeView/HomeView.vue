@@ -5,14 +5,14 @@ import TopBar from '@/modules/TopBar/TopBar.vue'
 </script>
 
 <template>
-  <main class="home-container">
+  <div class="home-container">
     <TopBar />
     <TypeHeader
       title="Your Movies"
       subtitle="Below you can find the movies that came back from your search"
     />
     <MoviesList />
-  </main>
+  </div>
 </template>
 
 <style scoped lang="scss" src="./HomeView.scss"></style>

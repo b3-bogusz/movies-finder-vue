@@ -23,9 +23,6 @@ import '@/styles/main.scss'
     @media (min-width: $tablet-768) {
       max-width: 92%;
     }
-    @media (min-width: $tablet-1024) {
-      max-width: 95%;
-    }
   }
 }
 </style>
